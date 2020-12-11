@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Rambla|Staatliches&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-border: #ffffff34;
+    --font-staat: 'Staatliches', cursive;
+    --font-os:  'Oswald', sans-serif;
+    --font-ram: 'Rambla', sans-serif;
+}
+
+/* global classes */
+.font-staat{
+    font: normal 400 18px var(--font-staat);
+}
+.font-os{
+    font: normal 300 18px var(--font-os);
+}
+.font-ram{
+    font: normal bold 18px var(--font-ram);
+}
+
+.font-size-40{
+    font-size: 40px;
+}
+.font-size-34{
+    font-size: 34px;
+}
+.font-size-27{
+    font-size: 27px;
+}
+.font-size-20{
+    font-size: 20px;
+}
+.font-size-16{
+    font-size: 16px;
+}
+
+.bgcolor-black{
+    background-color: var(--color-black);
+}
+
+/* #global classes */
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transition: left .5s ease;
+}
+
+#header nav{
+    height: 100vh;
+    width: 300px;
+}
+#header .site-title .navbar-brand{
+    letter-spacing: 2px;
+    color: var(--color-white);
+}
+
+#header .nav-link{
+    margin: .45rem 1rem;
+    border-bottom: 2px solid var(--color-border);
+    text-transform: uppercase;
+}
+
+#header .nav-link:hover{
+    color: var(--color-white) !important;
+}
+
+#header .toggle-button{
+    background: none;
+    color: var(--color-black);
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    border: 0px
+}
+
+.toggle-left{
+    left: 0 !important;
+}
+
+/* site-main */
+
+.site-banner .banner-area{
+    background: url(./assets/Banner_image2.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.site-banner .banner-area .author{
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.site-banner .banner-area .author .author-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+    background: url(./assets/about_2.svg) no-repeat;
+    background-size: 60%;
+    background-position: 50% 100%;
+}
+
+.scroll-btn{
+    bottom: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateY(-50%);
+    border: 2px solid #fff;
+    padding: 3px 8px 4px;
+    border-radius: 30px;
+}
+
+.scroll-bar span{
+    border: 2px solid #fff;
+    font-size: 2px;
+    border-radius: 30px;
+}
+
+.scroll-bar{
+    animation: mover 0.8s infinite alternate;
+}
+
+@keyframes mover{
+    0%{transform: translateY(-10px);}
+    100%{transform: translateY(-5px);}
+}
+
+/* about */
+
+.block{
+    display: inline;
+}
+
+@media screen and (max-width: 450px){
+    .block{
+        display: block;
+    }
+}
+
+/* about */
+
+/* Education */
+
+.education input{
+    display: none;
+    position: absolute;
+}
+.sec-head{
+    position: relative;
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    margin-top: 60px;
+    animation: trans .7s linear forwards;
+}
+ul.navigationBar{
+    padding-top: 15px;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+}
+ul.navigationBar li{
+    list-style: none;
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all .3s ease;
+    vertical-align: middle;
+    height: 60px;
+    position: relative;
+}
+ul.navigationBar li::before{
+    content: '';
+    width: 25px;
+    height: 25px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    transition: all .3s ease;
+    box-sizing: content-box;
+}
+ul.navigationBar li:hover::before{
+    border: 2px solid #fff;
+    background: #777;
+}
+ul.navigationBar li .inner{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+ul.navigationBar li.active, ul.navigationBar li:hover{
+    color: #444;
+}
+ul.navigationBar li::after{
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: #777;
+    border-radius: 50%;
+    margin: auto;
+    border: 7px solid #fff;
+    margin-top: 40px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    box-sizing: content-box;
+}
+ul.navigationBar li:hover::after, ul.navigationBar li.active::after{
+    background: blue;
+}
+.line{
+    width: 66%;
+    margin: auto;
+    background: #eee;
+    height: 7px;
+    position: absolute;
+    left: 17%;
+    top: 52px;
+    z-index: 1;
+    border-radius: 50px;
+}
+.line span{
+    content: '';
+    width: 0%;
+    height: 100%;
+    background: grey;
+    position: absolute;
+    z-index: 2;
+    border-radius: 50px;
+    transition: all .8s ease;
+}
+.educontent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: anim .7s linear forwards;
+}
+.educontent section{
+    width: 70%;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 30px;
+    color: grey;
+}
+.educontent section img{
+    display: block;
+    margin: 0 auto;
+} 
+.Uni:checked ~ .sec-head .navigationBar li.st1::before,
+.G12:checked ~ .sec-head .navigationBar li.st2::before,
+.G10:checked ~ .sec-head .navigationBar li.st3::before{
+    border: 2px solid #fff;
+    background: #777;
+    transition: all .3s ease;
+}
+.G12:checked ~ .sec-head .line span{
+    width: 50%;
+}
+.G10:checked ~ .sec-head .line span{
+    width: 100%;
+}
+.Edu1, .Edu2, .Edu3{
+    transform: scale(0);
+    transform-origin: center bottom;
+    transition: all .7s ease;
+    position: absolute;
+    box-sizing: content-box;
+}
+
+.Uni:checked ~ .educontent .Edu1,
+.G12:checked ~ .educontent .Edu2,
+.G10:checked ~ .educontent .Edu3{
+    display: block;
+    transform: scale(1);
+    transform-origin: bottom;
+    position: relative;
+}
+@keyframes anim {
+    0%{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    50%{
+        opacity: 0.5;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes trans {
+    0%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    50%{
+        opacity: 0.5;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/* Education */
+
+.skill .bars p, .site-content .skill .bars span{
+    line-height: 10px;
+}
+
+.overlayFade{
+    height: 100%;
+    width:100%;
+    top:0;
+    left:0;
+}
+
+.overlay {
+    position: absolute;
+    opacity: 0;
+    transition:all .5s ease;
+    background-color: dimgray;
+}
+
+.container:hover .overlay,.container:hover .overlayFade {
+    opacity: 0.95;
+}
+
+.text {
+    color: white;
+    font-size: 15pxcmqsvghnaxwzr1bq;
+    position: absolute;
+    padding: 5px;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/* Clubs */
+@media screen and (max-width: 1075px){
+    section.clubs div.container{
+        padding: 0;
+    }
+}
+/* #Clubs */
+
+/* CAS */
+
+@media screen and (max-width: 575px){
+    section.CAS div.container{
+        padding: 0;
+    }
+}
+
+/* #CAS */
+
+.contact_us form .row .col input[type="text"],
+.contact_us form .row .col input[type="email"],
+.contact_us form textarea{
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+    padding: 1.5rem 1rem;
+}
+
+.copyright{
+    margin: auto 0;
+}
+/* #site-main */
